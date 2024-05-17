@@ -1,37 +1,17 @@
-import React, { useState } from 'react';
-import { Form, Button, Container, Row, Col } from 'react-bootstrap';
+import React from 'react';
+import { Form, Container, Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-function Information() {
-  const [formData, setFormData] = useState({
-    projectName: '',
-    workOrderNo: '',
-    projectType: '',
-    category: '',
-    client: '',
-    clientContact: '',
-    salesPerson: '',
-    projectManager: '',
-    projectDescription: '',
-  });
-
+function Information({ formData, onFormChange }) {
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData, [name]: value,
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form Data Submitted:', formData);
-    // Perform form submission logic, e.g., sending data to a server
+    onFormChange({ [name]: value });
   };
 
   return (
-    <Container style={{height:"80vh",width:"50vw", border:'2px solid grey'}}>
+    <Container style={{ height: "70vh", width: "50vw", border: '2px solid grey' }}>
       <h2 className="mt-4">Project Information</h2>
-      <Form onSubmit={handleSubmit}>
+      <Form>
         <Row className="mb-3">
           <Col>
             <Form.Group controlId="formProjectName">
@@ -181,9 +161,6 @@ function Information() {
             </Form.Group>
           </Col>
         </Row>
-        <Button variant="primary" type="submit">
-          Submit
-        </Button>
       </Form>
     </Container>
   );

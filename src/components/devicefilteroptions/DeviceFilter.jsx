@@ -1,33 +1,16 @@
-import React, { useState } from "react";
-import { Container, Form } from "react-bootstrap";
+import React from 'react';
+import { Container, Form } from 'react-bootstrap';
 import "./deviceFilter.css"
 
-function DeviceFilter() {
-  const [deviceState, setDeviceState] = useState({
-    mobile: false,
-    tablet: false,
-    desktop: false,
-  });
-
-  const [featureState, setFeatureState] = useState({
-    gatesurvey: false,
-    fraudDetection: false,
-  });
-
+function DeviceFilter({ deviceState, featureState, onDeviceChange, onFeatureChange }) {
   const handleDeviceChange = (e) => {
     const { id, checked } = e.target;
-    setDeviceState((prevState) => ({
-      ...prevState,
-      [id]: checked,
-    }));
+    onDeviceChange({ ...deviceState, [id]: checked });
   };
 
   const handleFeatureChange = (e) => {
     const { id, checked } = e.target;
-    setFeatureState((prevState) => ({
-      ...prevState,
-      [id]: checked,
-    }));
+    onFeatureChange({ ...featureState, [id]: checked });
   };
 
   return (
@@ -35,7 +18,7 @@ function DeviceFilter() {
       <Container>
         {/* Box 1: Device Checkboxes */}
         <div>
-          <h5>Device Checkboxes</h5>
+          <h5>Devices</h5>
           <Form>
             <Form.Group>
               <Form.Check
@@ -69,7 +52,7 @@ function DeviceFilter() {
 
         {/* Box 2: Feature Checkboxes */}
         <div className="position_secondBox">
-          <h5>Feature Checkboxes</h5>
+          <h5>Filter options</h5>
           <Form>
             <Form.Group>
               <Form.Check

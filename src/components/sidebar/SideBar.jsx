@@ -10,7 +10,7 @@ function SidebarMenu() {
   return (
     <div
       style={{
-        height: "100vh",
+        height: "110vh",
         border: "1px solid grey",
       }}
     >
