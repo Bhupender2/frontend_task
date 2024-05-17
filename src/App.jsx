@@ -1,12 +1,10 @@
-import { useState } from "react";
-
 import "./App.css";
+import SidebarMenu from "./sidebar/SideBar";
 
 function App() {
-
   return (
     <div>
-     i am gonna maek it
+      <SidebarMenu />
     </div>
   );
 }
