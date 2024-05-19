@@ -13,12 +13,22 @@ function CountryDropdown({ onAddCountry }) {
   };
 
   return (
-    <div style={{width:"80vw"}}>
-      <Select
-        options={options}
-        onChange={handleChange}
-        placeholder="Select a country"
-      />
+    <div style={{ width: "80vw" }}>
+      <h2 className="upperCase">regions</h2>
+      <div
+        style={{
+          backgroundColor: "#dddddd",
+          border: "2px solid #b4b4b8",
+          padding: "10px 10px",
+        }}
+      >
+        Country
+        <Select
+          options={options}
+          onChange={handleChange}
+          placeholder="Select a country"
+        />
+      </div>
     </div>
   );
 }

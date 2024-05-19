@@ -17,7 +17,8 @@ function DeviceFilter({ deviceState, featureState, onDeviceChange, onFeatureChan
     <div className="position_box">
       <Container>
         {/* Box 1: Device Checkboxes */}
-        <div>
+     <div className='position_outerbox'>
+     <div className='position_secondBox'>
           <h5>Devices</h5>
           <Form>
             <Form.Group>
@@ -51,7 +52,7 @@ function DeviceFilter({ deviceState, featureState, onDeviceChange, onFeatureChan
         </div>
 
         {/* Box 2: Feature Checkboxes */}
-        <div className="position_secondBox">
+        <div className='position_secondBox' >
           <h5>Filter options</h5>
           <Form>
             <Form.Group>
@@ -74,6 +75,7 @@ function DeviceFilter({ deviceState, featureState, onDeviceChange, onFeatureChan
             </Form.Group>
           </Form>
         </div>
+     </div>
       </Container>
     </div>
   );

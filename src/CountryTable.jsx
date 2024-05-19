@@ -25,7 +25,7 @@ function CountryTable({
           <th style={headerStyle}>Actions</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody style={{backgroundColor:"#DDDDDD"}}>
         {countries.map((row, index) => (
           <tr key={index}>
             <td>

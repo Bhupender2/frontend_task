@@ -59,3 +59,6 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+.css-13cymwt-control{
+  border:1px solid black !important
+}
