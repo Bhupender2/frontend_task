@@ -7,6 +7,7 @@ import CountryDropdown from "./CountryDropdown";
 import CountryTable from "./CountryTable";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { IoArrowBack } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
 
 const initialRow = {
   country: "",
@@ -40,6 +41,8 @@ function App() {
       fraudDetection: false,
     },
   });
+
+  const navigate = useNavigate();
 
   const handleAddCountry = (country) => {
     if (!selectedCountries.some((c) => c.country === country)) {
@@ -90,6 +93,9 @@ function App() {
   const handleShowContent = () => {
     setShowContent(true);
   };
+  const handleClick = () => {
+    setShowContent(false);
+  };
 
   return (
     <>
@@ -97,7 +103,10 @@ function App() {
         <SidebarMenu onShowContent={handleShowContent} />
         {showContent && (
           <div>
-            <button   className="backbutton_styling"> <IoArrowBack /> Back</button>
+            <button className="backbutton_styling" onClick={handleClick}>
+              {" "}
+              <IoArrowBack /> Back
+            </button>
             <div style={{ display: "flex" }}>
               <Information
                 formData={formData}
