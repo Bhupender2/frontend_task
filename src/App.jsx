@@ -7,7 +7,6 @@ import CountryDropdown from "./CountryDropdown";
 import CountryTable from "./CountryTable";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { IoArrowBack } from "react-icons/io5";
-import { useNavigate } from "react-router-dom";
 
 const initialRow = {
   country: "",
@@ -42,7 +41,6 @@ function App() {
     },
   });
 
-  const navigate = useNavigate();
 
   const handleAddCountry = (country) => {
     if (!selectedCountries.some((c) => c.country === country)) {
@@ -104,7 +102,7 @@ function App() {
         {showContent && (
           <div>
             <button className="backbutton_styling" onClick={handleClick}>
-              {" "}
+         
               <IoArrowBack /> Back
             </button>
             <div style={{ display: "flex" }}>
@@ -137,6 +135,9 @@ function App() {
               </Row>
               <Row>
                 <Col className="d-flex justify-content-end">
+                  <Button variant="danger" onClick={handleSubmit} style={{marginRight:"10px"}} onClick={handleClick}>
+                    Cancel
+                  </Button>
                   <Button variant="primary" onClick={handleSubmit}>
                     Submit
                   </Button>
