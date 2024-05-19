@@ -1,0 +1,15 @@
+.form-control {
+  border: 1px solid black !important;
+  border-radius: 1px !important;
+}
+.upperCase {
+  text-transform: upperCase;
+  font-size: 1.3rem !important;
+}
+
+.sizing {
+  height: 65vh;
+  width: 50vw;
+  border: 2px solid #b4b4b8;
+  background-color: #dddddd ;
+}

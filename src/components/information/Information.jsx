@@ -1,6 +1,7 @@
 import React from 'react';
 import { Form, Container, Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "./information.css"
 
 function Information({ formData, onFormChange }) {
   const handleChange = (e) => {
@@ -9,8 +10,8 @@ function Information({ formData, onFormChange }) {
   };
 
   return (
-    <Container style={{ height: "70vh", width: "50vw", border: '2px solid grey' }}>
-      <h2 className="mt-4">Project Information</h2>
+    <Container className='sizing'>
+      <h2 className="mt-4 upperCase">Project Information</h2>
       <Form>
         <Row className="mb-3">
           <Col>
