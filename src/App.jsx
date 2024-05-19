@@ -6,29 +6,30 @@ import { useState } from "react";
 import CountryDropdown from "./CountryDropdown";
 import CountryTable from "./CountryTable";
 import { Container, Row, Col, Button } from "react-bootstrap";
+import { IoArrowBack } from "react-icons/io5";
 
 const initialRow = {
-  country: '',
-  language: '',
-  cpi: '',
-  loi: '',
-  ir: '',
-  completes: ''
+  country: "",
+  language: "",
+  cpi: "",
+  loi: "",
+  ir: "",
+  completes: "",
 };
 
 function App() {
   const [selectedCountries, setSelectedCountries] = useState([]);
   const [showContent, setShowContent] = useState(false);
   const [formData, setFormData] = useState({
-    projectName: '',
-    workOrderNo: '',
-    projectType: '',
-    category: '',
-    client: '',
-    clientContact: '',
-    salesPerson: '',
-    projectManager: '',
-    projectDescription: '',
+    projectName: "",
+    workOrderNo: "",
+    projectType: "",
+    category: "",
+    client: "",
+    clientContact: "",
+    salesPerson: "",
+    projectManager: "",
+    projectDescription: "",
     devices: {
       mobile: false,
       tablet: false,
@@ -41,7 +42,7 @@ function App() {
   });
 
   const handleAddCountry = (country) => {
-    if (!selectedCountries.some(c => c.country === country)) {
+    if (!selectedCountries.some((c) => c.country === country)) {
       setSelectedCountries([...selectedCountries, { ...initialRow, country }]);
     }
   };
@@ -52,7 +53,11 @@ function App() {
 
   const handleCloneCountry = (index) => {
     const clonedCountry = { ...selectedCountries[index] };
-    setSelectedCountries([...selectedCountries.slice(0, index + 1), clonedCountry, ...selectedCountries.slice(index + 1)]);
+    setSelectedCountries([
+      ...selectedCountries.slice(0, index + 1),
+      clonedCountry,
+      ...selectedCountries.slice(index + 1),
+    ]);
   };
 
   const handleInputChange = (index, field, value) => {
@@ -62,24 +67,24 @@ function App() {
   };
 
   const handleFormChange = (data) => {
-    setFormData(prevData => ({ ...prevData, ...data }));
+    setFormData((prevData) => ({ ...prevData, ...data }));
   };
 
   const handleDeviceChange = (devices) => {
-    setFormData(prevData => ({ ...prevData, devices }));
+    setFormData((prevData) => ({ ...prevData, devices }));
   };
 
   const handleFeatureChange = (features) => {
-    setFormData(prevData => ({ ...prevData, features }));
+    setFormData((prevData) => ({ ...prevData, features }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const combinedData = {
       ...formData,
-      countries: selectedCountries
+      countries: selectedCountries,
     };
-    console.log('Form Data Submitted:', JSON.stringify(combinedData, null, 2));
+    console.log("Form Data Submitted:", JSON.stringify(combinedData, null, 2));
   };
 
   const handleShowContent = () => {
@@ -92,9 +97,13 @@ function App() {
         <SidebarMenu onShowContent={handleShowContent} />
         {showContent && (
           <div>
+            <button style={{backgroundColor:"yellow", padding:"2px", margin:"10px"}}> <IoArrowBack /> Back</button>
             <div style={{ display: "flex" }}>
-              <Information formData={formData} onFormChange={handleFormChange} />
-              <DeviceFilter 
+              <Information
+                formData={formData}
+                onFormChange={handleFormChange}
+              />
+              <DeviceFilter
                 deviceState={formData.devices}
                 featureState={formData.features}
                 onDeviceChange={handleDeviceChange}
@@ -119,7 +128,9 @@ function App() {
               </Row>
               <Row>
                 <Col className="d-flex justify-content-end">
-                  <Button variant="primary" onClick={handleSubmit}>Submit</Button>
+                  <Button variant="primary" onClick={handleSubmit}>
+                    Submit
+                  </Button>
                 </Col>
               </Row>
             </Container>

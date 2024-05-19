@@ -4,10 +4,11 @@ import { BiSolidReport } from "react-icons/bi";
 import { FaBuilding } from "react-icons/fa";
 import { AiFillDashboard } from "react-icons/ai";
 import { IoIosPeople } from "react-icons/io";
+import "./sideBar.css";
 
 function SidebarMenu({ onShowContent }) {
   return (
-    <div style={{ height: "110vh", border: "1px solid grey" }}>
+    <div className="sidebar_styling">
       <Sidebar>
         <Menu iconShape="circle">
           <SubMenu label="Dashboard" icon={<AiFillDashboard />}>

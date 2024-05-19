@@ -12,6 +12,8 @@ function CountryTable({
     color: 'white'
   };
   return (
+    <>
+    <h4>SPECIFICATIONS</h4>
     <Table striped bordered hover>
       <thead>
       <tr>
@@ -92,6 +94,7 @@ function CountryTable({
         ))}
       </tbody>
     </Table>
+    </>
   );
 }
 
