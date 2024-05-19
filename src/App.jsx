@@ -18,6 +18,7 @@ const initialRow = {
 
 function App() {
   const [selectedCountries, setSelectedCountries] = useState([]);
+  const [showContent, setShowContent] = useState(false);
   const [formData, setFormData] = useState({
     projectName: '',
     workOrderNo: '',
@@ -81,43 +82,49 @@ function App() {
     console.log('Form Data Submitted:', JSON.stringify(combinedData, null, 2));
   };
 
+  const handleShowContent = () => {
+    setShowContent(true);
+  };
+
   return (
     <>
       <div className="position_layout">
-        <SidebarMenu />
-        <div>
-          <div style={{ display: "flex" }}>
-            <Information formData={formData} onFormChange={handleFormChange} />
-            <DeviceFilter 
-              deviceState={formData.devices}
-              featureState={formData.features}
-              onDeviceChange={handleDeviceChange}
-              onFeatureChange={handleFeatureChange}
-            />
+        <SidebarMenu onShowContent={handleShowContent} />
+        {showContent && (
+          <div>
+            <div style={{ display: "flex" }}>
+              <Information formData={formData} onFormChange={handleFormChange} />
+              <DeviceFilter 
+                deviceState={formData.devices}
+                featureState={formData.features}
+                onDeviceChange={handleDeviceChange}
+                onFeatureChange={handleFeatureChange}
+              />
+            </div>
+            <Container>
+              <Row className="my-4">
+                <Col>
+                  <CountryDropdown onAddCountry={handleAddCountry} />
+                </Col>
+              </Row>
+              <Row>
+                <Col>
+                  <CountryTable
+                    countries={selectedCountries}
+                    onRemoveCountry={handleRemoveCountry}
+                    onCloneCountry={handleCloneCountry}
+                    onInputChange={handleInputChange}
+                  />
+                </Col>
+              </Row>
+              <Row>
+                <Col className="d-flex justify-content-end">
+                  <Button variant="primary" onClick={handleSubmit}>Submit</Button>
+                </Col>
+              </Row>
+            </Container>
           </div>
-          <Container>
-            <Row className="my-4">
-              <Col>
-                <CountryDropdown onAddCountry={handleAddCountry} />
-              </Col>
-            </Row>
-            <Row>
-              <Col>
-                <CountryTable
-                  countries={selectedCountries}
-                  onRemoveCountry={handleRemoveCountry}
-                  onCloneCountry={handleCloneCountry}
-                  onInputChange={handleInputChange}
-                />
-              </Col>
-            </Row>
-            <Row>
-              <Col className="d-flex justify-content-end">
-                <Button variant="primary" onClick={handleSubmit}>Submit</Button>
-              </Col>
-            </Row>
-          </Container>
-        </div>
+        )}
       </div>
     </>
   );

@@ -1,19 +1,13 @@
 import { Sidebar, Menu, MenuItem, SubMenu } from "react-pro-sidebar";
-
 import { FaRocket } from "react-icons/fa";
 import { BiSolidReport } from "react-icons/bi";
 import { FaBuilding } from "react-icons/fa";
 import { AiFillDashboard } from "react-icons/ai";
 import { IoIosPeople } from "react-icons/io";
 
-function SidebarMenu() {
+function SidebarMenu({ onShowContent }) {
   return (
-    <div
-      style={{
-        height: "110vh",
-        border: "1px solid grey",
-      }}
-    >
+    <div style={{ height: "110vh", border: "1px solid grey" }}>
       <Sidebar>
         <Menu iconShape="circle">
           <SubMenu label="Dashboard" icon={<AiFillDashboard />}>
@@ -25,8 +19,8 @@ function SidebarMenu() {
             <MenuItem>Manage Company</MenuItem>
           </SubMenu>
           <SubMenu label="Project" icon={<FaRocket />}>
-            <MenuItem>Create Project</MenuItem>
-            <MenuItem>Manage Project</MenuItem>
+            <MenuItem onClick={onShowContent}>Create Project</MenuItem>
+            <MenuItem onClick={onShowContent}>Manage Project</MenuItem>
           </SubMenu>
           <SubMenu label="Reporting" icon={<BiSolidReport />}>
             <MenuItem>Creating Reporting</MenuItem>
