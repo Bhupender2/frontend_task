@@ -1,4 +1,9 @@
-.position_layout{
-  display:flex;
-  
+.position_layout {
+  display: flex;
+}
+.backbutton_styling {
+  background-color: #607274;
+  padding: 2px 11px 2px 6px;
+  margin: 10px;
+  color:white
 }

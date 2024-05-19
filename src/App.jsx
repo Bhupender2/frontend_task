@@ -97,7 +97,7 @@ function App() {
         <SidebarMenu onShowContent={handleShowContent} />
         {showContent && (
           <div>
-            <button style={{backgroundColor:"yellow", padding:"2px", margin:"10px"}}> <IoArrowBack /> Back</button>
+            <button   className="backbutton_styling"> <IoArrowBack /> Back</button>
             <div style={{ display: "flex" }}>
               <Information
                 formData={formData}
