@@ -5,6 +5,8 @@
 .upperCase {
   text-transform: upperCase;
   font-size: 1.3rem !important;
+  padding:0px 0px !important
+ 
 }
 
 .sizing {

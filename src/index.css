@@ -34,6 +34,8 @@ body {
   display: flex;
   min-width: 320px;
   min-height: 100vh;
+  background-color:#F1F1F1;
+  font-size: 15px !important
 }
 
 h1 {

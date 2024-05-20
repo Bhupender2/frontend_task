@@ -41,7 +41,6 @@ function App() {
     },
   });
 
-
   const handleAddCountry = (country) => {
     if (!selectedCountries.some((c) => c.country === country)) {
       setSelectedCountries([...selectedCountries, { ...initialRow, country }]);
@@ -102,7 +101,6 @@ function App() {
         {showContent && (
           <div>
             <button className="backbutton_styling" onClick={handleClick}>
-         
               <IoArrowBack /> Back
             </button>
             <div style={{ display: "flex" }}>
@@ -135,7 +133,11 @@ function App() {
               </Row>
               <Row>
                 <Col className="d-flex justify-content-end">
-                  <Button variant="danger" onClick={handleSubmit} style={{marginRight:"10px"}} onClick={handleClick}>
+                  <Button
+                    variant="danger"
+                    style={{ marginRight: "10px" }}
+                    onClick={handleClick}
+                  >
                     Cancel
                   </Button>
                   <Button variant="primary" onClick={handleSubmit}>
