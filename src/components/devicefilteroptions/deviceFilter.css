@@ -1,21 +1,27 @@
-.position_box{
-  padding:0px 10px;
-  margin-right:180px;
-  
+.position_box {
+  padding: 0px 10px;
+  margin-right: 180px;
 }
-.position_secondBox{
-  margin-top:30px;
-  border:1px solid black;
-  padding:10px 20px;
+.position_secondBox {
+  margin-top: 30px;
+  /* padding: 10px 20px; */
   border: 2px solid #b4b4b8;
-  background-color: #dddddd 
+  background-color: #dddddd;
 }
-.position_outerbox{
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between
+.position_outerbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-
-.form-check-input[type=checkbox]{ border: 2px solid #b4b4b8;
-background-color: #dddddd }
+.form-check-input[type="checkbox"] {
+  border: 2px solid #b4b4b8;
+  /* background-color: #dddddd; */
+}
+.position_form_sizing{
+  padding: 10px 30px !important;
+}
+.heading_position{
+  padding: 2.5px 30px !important;
+  background-color:white
+}

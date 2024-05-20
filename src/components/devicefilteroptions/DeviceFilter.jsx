@@ -19,8 +19,10 @@ function DeviceFilter({ deviceState, featureState, onDeviceChange, onFeatureChan
         {/* Box 1: Device Checkboxes */}
      <div className='position_outerbox'>
      <div className='position_secondBox'>
-          <h5>Devices</h5>
-          <Form>
+        <div className='heading_position'>
+        <h5>Devices</h5>
+        </div>
+          <Form className="position_form_sizing">
             <Form.Group>
               <Form.Check
                 type="checkbox"
@@ -53,8 +55,10 @@ function DeviceFilter({ deviceState, featureState, onDeviceChange, onFeatureChan
 
         {/* Box 2: Feature Checkboxes */}
         <div className='position_secondBox' >
-          <h5>Filter options</h5>
-          <Form>
+         <div className='heading_position'>
+         <h5>Filter options</h5>
+         </div>
+          <Form className="position_form_sizing"> 
             <Form.Group>
               <Form.Check
                 type="checkbox"
