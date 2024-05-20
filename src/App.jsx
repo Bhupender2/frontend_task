@@ -79,7 +79,7 @@ function App() {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault();  // for not reloading the form by default
     const combinedData = {
       ...formData,
       countries: selectedCountries,
