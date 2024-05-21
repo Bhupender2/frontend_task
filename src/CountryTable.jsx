@@ -31,7 +31,7 @@ function CountryTable({
           {countries.map((row, index) => (
             <tr key={index}>
               <td>
-                <input type="checkbox" />
+               {index+1}
               </td>
               <td>{row.country}</td>
               <td>
