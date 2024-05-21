@@ -13,7 +13,13 @@ function CountryDropdown({ onAddCountry }) {
   };
 
   return (
-    <div style={{ width: "80vw", border:"1px solid #b4b4b8",backgroundColor: "white" }}>
+    <div
+      style={{
+        width: "80vw",
+        border: "1px solid #b4b4b8",
+        backgroundColor: "white",
+      }}
+    >
       <h2 className="upperCase">regions</h2>
       <div
         style={{
